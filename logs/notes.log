@@ -1,0 +1,14 @@
+checking sparsity of number of contexts available for users in terms of number of users with reciprocal links and number of users tweeting on same hashtag
+extracting sentences using paths in hashtag graphs with time and geography based edges and training word2vec for getting user vectors, plots for user count and sentence length frequency
+comparing top 10 similar users obtained using user vectors and using counts of users from tweet data
+splitting sequence file into train and test for training user vectors for adopter prediction task, using breadth-first search and path-based approach for generating sentences from hashtag graph, using sequences with atleast k adopters in training user vectors ?
+tSNE visualisation of user vectors trained using sentences with geography and time or time criteria
+querying for nearest neighbors of user vectors using kd-tree or brute force approach and ranking them using distance metrics (min, average, weighted average) for different values of n and k
+plotting change in precision and map at k with different values of k
+learning weights for combining distances, in sorted order, of candidate users from initial adopters, with candidate set as nearest neighbors of user vectors of initial adopters, taking only subset of test sequences for training weights
+learning weights for individual topics by querying a set of candidates first using nearest neighbour or distance-based methods, and then training and testing classifier to predict adopters from the candidate set
+tSNE visualisation of candidate set for individual topics along with predicted labels
+stepwise prediction of adopters from the candidate set, predicting adopters based on a prediction probability threshold?
+plotting candidate set coverage with increasing size of candidate set in terms of number of nearest neighbours queried or it’s radius, plotting total spread of topics with the candidate set coverage in first 1000 adoptions
+training and testing adopter prediction task for particular size of candidate set
+predicting geography of users from user vectors, comparing with network-based baselines
