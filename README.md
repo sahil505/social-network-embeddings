@@ -1,13 +1,6 @@
 # Social Network Embeddings
 Code for methods to embed social network users based on their topic activity, described in the [paper](https://arxiv.org/abs/1710.07622)
 
-```
-Sahil Khokhar is currently continuing this work further.
-Learning user representations in Online Social Networks using temporal dynamics of information diffusion.
-Harvineet Singh, Amitabha Bagchi, and Parag Singla.
-arXiv:1710.07622 cs.SI
-```
-
 #### Abstract
 
 ```
