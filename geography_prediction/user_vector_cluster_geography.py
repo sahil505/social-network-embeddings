@@ -86,7 +86,7 @@ arr = ["user_followers_bigger_graph.txt","user_followers_bigger_graph_2.txt", "u
 f_read_list = []
 for i in arr:
 	f_read_list.append(open("/twitterSimulations/graph/" + i,'rb'))
-	
+
 line_offset = pickle.load( open( "/twitterSimulations/follower_file_offset.pickle", "rb" ) )
 print 'Follower file offset Read\n'
 
@@ -94,7 +94,7 @@ arr_fr = ["user_friends_bigger_graph.txt","user_friends_bigger_graph_2.txt", "us
 f_read_list_fr = []
 for i in arr_fr:
 	f_read_list_fr.append(open("/twitterSimulations/graph/" + i,'rb'))
-	
+
 line_offset_fr = pickle.load( open( "friend_file_offset.pickle", "rb" ) )
 print 'Friend file offset Read\n'
 
@@ -231,7 +231,7 @@ for i in clusters:
 	clusters_ent.append(c_ent)
 	ent+=c_ent
 
-print ent*1./len(clusters), min(clusters_ent), max(clusters_ent) 	
+print ent*1./len(clusters), min(clusters_ent), max(clusters_ent)
 
 #entropy of geography distribution across clusters
 loc_spread = defaultdict(list)
@@ -249,7 +249,7 @@ for i in loc_spread:
 	loc_ent.append(c_ent)
 	l_ent+=c_ent
 
-print l_ent*1./len(loc_spread), min(loc_ent), max(loc_ent), sorted(loc_ent)[len(loc_ent)/2] 
+print l_ent*1./len(loc_spread), min(loc_ent), max(loc_ent), sorted(loc_ent)[len(loc_ent)/2]
 
 with open("/mnt/filer01/word2vec/degree_distribution/adopter_pred_files/user_vector_cluster_entropy.pickle","wb") as fd:
 	pickle.dump(clusters,fd)
@@ -263,10 +263,10 @@ def pred_eval(y_true,y_pred):
 	macro_f1 = f1_score(y_true, y_pred, average='macro')
 	micro_f1 = f1_score(y_true, y_pred, average='micro')
 	acc = accuracy_score(y_true, y_pred, normalize = False)
-	macro_prec = precision_score(y_true, y_pred, average='macro') 
+	macro_prec = precision_score(y_true, y_pred, average='macro')
 	micro_prec = precision_score(y_true, y_pred, average='micro')
-	macro_rec = recall_score(y_true, y_pred, average='macro') 
-	micro_rec = recall_score(y_true, y_pred, average='micro') 
+	macro_rec = recall_score(y_true, y_pred, average='macro')
+	micro_rec = recall_score(y_true, y_pred, average='micro')
 	return (macro_f1, micro_f1), acc, (macro_prec, micro_prec), (macro_rec, micro_rec)
 
 #users with known location
@@ -326,7 +326,7 @@ print pred_eval(test_Y,maj_pred_Y), maj_label
 svc_clf = LinearSVC(penalty='l2', C=10.0, dual=False, multi_class='ovr')
 svc_clf.fit(train_X, train_Y)
 
-svc_pred_Y = svc_clf.predict(test_X) 
+svc_pred_Y = svc_clf.predict(test_X)
 
 print pred_eval(test_Y,svc_pred_Y)
 svc_label_freq = Counter(svc_pred_Y)
@@ -336,7 +336,7 @@ print svc_label_freq, len(svc_label_freq)
 clf = LogisticRegression(penalty='l2', C=10.0, dual=False, solver='liblinear', multi_class='ovr')
 clf.fit(train_X, train_Y)
 
-pred_Y = clf.predict(test_X) 
+pred_Y = clf.predict(test_X)
 
 print pred_eval(test_Y,pred_Y)
 pred_label_freq = Counter(pred_Y)
