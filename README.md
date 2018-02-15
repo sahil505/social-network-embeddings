@@ -1,4 +1,4 @@
-# Social Network Embedding
+# Social Network Embeddings
 Code for methods to embed social network users based on their topic activity, described in the [paper](https://arxiv.org/abs/1710.07622)
 
 ```
