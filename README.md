@@ -1,5 +1,5 @@
 # Social Network Embeddings
-Code for methods to embed social network users based on their topic activity, described in the [paper](https://arxiv.org/abs/1710.07622)
+Code for methods to embed social network users based on their topic activity, described in the [paper](https://arxiv.org/abs/1710.07622). This experiment is performed on a large-scale social network extracted from Twitter, consisting of about 7.7 million users and their activity on around 3.6 million topics over a month long period to predict the most likely future adopters of a topic and the geo-location of users by training a word2vec (Skip-Gram Model) model in the context of text mining to compute representations of users.
 
 #### Abstract
 
